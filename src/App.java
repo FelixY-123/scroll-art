@@ -8,22 +8,29 @@ public class App {
         char[][] palmTree = getPalmTree();
         char[][] Basketball = getBasketball();
 
-        while (true) {
-            scrollArt(palmTree);
-            Thread.sleep(30);
+        ASCII_Art[] arts = {
+                new ASCII_Art(getPalmTree()),
+                new ASCII_Art(getBasketball()),
+                new ASCII_Art(getGem()),
+                new ASCII_Art(getBurger()),
+                new ASCII_Art(getButterfly())
+        };
 
-            scrollArt(Basketball);
-            Thread.sleep(30);
+        while (true) {
+            for (int i = 0; i < arts.length; i++) {
+                scrollArt(arts[i].img);
+            }
         }
+
     }
 
     public static void scrollArt(char[][] ascii) throws InterruptedException {
         for (int i = 0; i < ascii.length; i++) {
-            for (int j = 0; j < ascii.length; j++) {
+            for (int j = 0; j < ascii[i].length; j++) {
                 System.out.print(ascii[i][j]);
             }
             System.out.println();
-            Thread.sleep(30);
+            Thread.sleep(50);
         }
 
     }
@@ -187,6 +194,243 @@ public class App {
 
         return img;
 
+    }
+
+    // Rohan's gem
+    static char[][] getGem() {
+
+        char[][] img = new char[8][10];
+
+        for (int y = 0; y < 8; y++) {
+            for (int x = 0; x < 10; x++) {
+                img[y][x] = ' ';
+            }
+        }
+
+        img[0][2] = '_';
+        img[0][3] = '_';
+        img[0][4] = '_';
+        img[0][5] = '_';
+        img[0][6] = '_';
+        img[0][7] = '_';
+
+        img[1][1] = '/';
+        img[1][2] = '_';
+        img[1][3] = '_';
+        img[1][4] = '_';
+        img[1][5] = '_';
+        img[1][6] = '_';
+        img[1][7] = '_';
+        img[1][8] = '\\';
+
+        img[2][0] = '/';
+        img[2][1] = '/';
+        img[2][3] = 'R';
+        img[2][4] = 'R';
+        img[2][8] = '\\';
+        img[2][9] = '\\';
+
+        img[3][0] = '\\';
+        img[3][1] = '\\';
+        img[3][8] = '/';
+        img[3][9] = '/';
+
+        img[4][1] = '\\';
+        img[4][2] = '\\';
+        img[4][5] = 'R';
+        img[4][6] = 'R';
+        img[4][7] = '/';
+        img[4][8] = '/';
+
+        img[5][2] = '\\';
+        img[5][3] = '\\';
+        img[5][6] = '/';
+        img[5][7] = '/';
+
+        img[6][3] = '\\';
+        img[6][4] = '\\';
+        img[6][5] = '/';
+        img[6][6] = '/';
+
+        img[7][4] = '\\';
+        img[7][5] = '/';
+
+        return img;
+    }
+
+    // Brendan's burger
+    static char[][] getBurger() {
+
+        char[][] img = new char[13][13];
+
+        for (int y = 0; y < 13; y++) {
+            for (int x = 0; x < 13; x++) {
+                img[y][x] = ' ';
+            }
+        }
+
+        img[1][3] = '-';
+        img[1][4] = '-';
+        img[1][5] = '-';
+        img[1][6] = '-';
+        img[1][7] = '-';
+        img[1][8] = '-';
+        img[1][9] = '-';
+        img[1][10] = '-';
+
+        img[2][2] = '/';
+        img[2][11] = '\\';
+
+        img[3][1] = '/';
+        img[3][12] = '\\';
+
+        img[4][1] = '|';
+        img[4][2] = '-';
+        img[4][3] = '-';
+        img[4][4] = '-';
+        img[4][5] = '-';
+        img[4][6] = '-';
+        img[4][7] = '-';
+        img[4][8] = '-';
+        img[4][9] = '-';
+        img[4][10] = '-';
+        img[4][11] = '-';
+        img[4][12] = '|';
+
+        img[6][1] = '/';
+        img[6][2] = '\\';
+        img[6][3] = '/';
+        img[6][4] = '\\';
+        img[6][5] = '/';
+        img[6][6] = '\\';
+        img[6][7] = '/';
+        img[6][8] = '\\';
+        img[6][9] = '/';
+        img[6][10] = '\\';
+        img[6][11] = '/';
+        img[6][12] = '\\';
+
+        img[7][2] = '-';
+        img[7][3] = '-';
+        img[7][4] = '-';
+        img[7][5] = '-';
+        img[7][6] = '-';
+        img[7][7] = '-';
+        img[7][8] = '-';
+        img[7][9] = '-';
+        img[7][10] = '-';
+        img[7][11] = '-';
+
+        img[8][1] = '<';
+        img[8][12] = '>';
+
+        img[9][2] = '-';
+        img[9][3] = '-';
+        img[9][4] = '-';
+        img[9][5] = '-';
+        img[9][6] = '-';
+        img[9][7] = '-';
+        img[9][8] = '-';
+        img[9][9] = '-';
+        img[9][10] = '-';
+        img[9][11] = '-';
+
+        img[10][2] = '-';
+        img[10][3] = '-';
+        img[10][4] = '-';
+        img[10][5] = '-';
+        img[10][6] = '-';
+        img[10][7] = '-';
+        img[10][8] = '-';
+        img[10][9] = '-';
+        img[10][10] = '-';
+        img[10][11] = '-';
+
+        img[11][1] = '|';
+        img[11][12] = '|';
+
+        img[12][2] = '-';
+        img[12][3] = '-';
+        img[12][4] = '-';
+        img[12][5] = '-';
+        img[12][6] = '-';
+        img[12][7] = '-';
+        img[12][8] = '-';
+        img[12][9] = '-';
+        img[12][10] = '-';
+        img[12][11] = '-';
+
+        return img;
+    }
+
+    // Catherine's butterfly
+    static char[][] getButterfly() {
+
+        char[][] img = new char[15][15];
+
+        for (int y = 0; y < 15; y++) {
+            for (int x = 0; x < 15; x++) {
+                img[y][x] = ' ';
+            }
+        }
+
+        img[1][5] = '♥';
+        img[1][6] = '♥';
+        img[1][10] = '♥';
+        img[1][11] = '♥';
+
+        img[2][4] = '♥';
+        img[2][7] = '♥';
+        img[2][9] = '♥';
+        img[2][12] = '♥';
+
+        img[3][4] = '♥';
+        img[3][6] = 'o';
+        img[3][8] = '♥';
+        img[3][10] = 'o';
+        img[3][12] = '♥';
+
+        img[4][5] = '♥';
+        img[4][8] = '-';
+        img[4][11] = '♥';
+
+        img[5][6] = '♥';
+        img[5][10] = '♥';
+
+        img[6][7] = '♥';
+        img[6][9] = '♥';
+
+        img[7][8] = '♥';
+
+        img[8][8] = '♥';
+
+        img[9][7] = '♥';
+        img[9][9] = '♥';
+
+        img[10][6] = '♥';
+        img[10][10] = '♥';
+
+        img[11][5] = '♥';
+        img[11][8] = '-';
+        img[11][11] = '♥';
+
+        img[12][4] = '♥';
+        img[12][6] = 'o';
+        img[12][8] = '♥';
+        img[12][10] = 'o';
+        img[12][12] = '♥';
+
+        img[13][4] = '♥';
+        img[13][7] = '♥';
+        img[13][9] = '♥';
+        img[13][12] = '♥';
+
+        img[14][5] = '♥';
+        img[14][6] = '♥';
+        img[14][10] = '♥';
+        img[14][11] = '♥';
+
+        return img;
     }
 
 }
